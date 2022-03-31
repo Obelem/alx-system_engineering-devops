@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ugo+x {dir0,dir1,dir2}
+chmod -R ugo+x *
