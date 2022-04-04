@@ -8,3 +8,13 @@ This displays a confused smiley "(Ôo)'
 This displays the content of the /etc/passwd file
 
 ##Script 3-twofiles
+Displays the content of /ect/passwd and /etc/hosts
+
+##Script 4-lastlines
+Displays the last 10 lines of /etc/passwd
+
+##Script 5-firstlines
+Displays the first 10 lines of /etc/passwd
+
+##Script 6-third_line
+Displays the third line of the file "iacta"
