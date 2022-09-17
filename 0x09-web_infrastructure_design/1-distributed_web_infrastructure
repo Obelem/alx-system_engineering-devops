@@ -3,5 +3,7 @@
 The pictorial reference to this writing is located in the link above..
 
 Additional Elements
-- One Web Server: extra web server is added to the previous infrastructure so that there is redundancy with the added server
-- One Load-Balancer: this is added to distribute the traffic between the two servers
+- One Web Server: 
+extra web server is added to the previous infrastructure so that there is redundancy with the added server
+- One Load-Balancer: 
+this is added to distribute the traffic between the two servers
