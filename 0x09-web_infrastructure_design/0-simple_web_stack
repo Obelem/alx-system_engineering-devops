@@ -20,3 +20,12 @@ Domain Name / Domain Name System (DNS)
 - The DNS helps translate the domain name record to an IP address
 - The hosted website by the infrastructure; www.foobar.com is an A record because it resolves to an IP address(IPV4), 8.8.8.8
 
+
+Problems With This Infrastructure
+1. Server is a Single Point of Failure (SPOF)
+This infrastructure design has no redundant server as a backup if the single server present failed. This presents a "single point of failure" as the application would crash due to the malfunctioning of the server.
+2. Downtime In Maintenance
+Rebooting of the server after maintenance practice e.g deploying new code, would cause a downtime as the sole server would be unavailable for that period of time to carry out its functionalities for the clients.
+3. Unscalability
+This infrastructure is unscalable due to its single server, web server, application server and absence of load balancer to handle multiple requests to it.
+
