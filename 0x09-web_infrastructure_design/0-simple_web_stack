@@ -27,5 +27,7 @@ This infrastructure design has no redundant server as a backup if the single ser
 2. Downtime In Maintenance
 Rebooting of the server after maintenance practice e.g deploying new code, would cause a downtime as the sole server would be unavailable for that period of time to carry out its functionalities for the clients.
 3. Unscalability
-This infrastructure is unscalable due to its single server, web server, application server and absence of load balancer to handle multiple requests to it.
+This infrastructure is unscalable due to its single server, web server, application server and absence of a load balancer to handle multiple requests to it.
 
+Protocol
+The server here uses the TCP/IP protocol to communicate with the computer of the user requesting the website.
