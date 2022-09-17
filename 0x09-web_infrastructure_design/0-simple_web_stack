@@ -1,4 +1,11 @@
+:link:# Insert link here
+
+The pictorial reference to this writing is located in the link above..:point_up:
+
 The Server
 - The server in the diagram is located in a datacenter (a specially designed structure to hold thousands of machines).
 - It could either be a physical or virtual (i.e an instance of a physical server).
 - The server (physical or virtual) also runs a special operating system that helps it perform its services to the end users.
+
+The Web Server
+- An NGINX web server is installed in the server for serving "static" web content (i.e hard-coded content that needs no changes when delivered to the user) over the protocol, HTTP.
