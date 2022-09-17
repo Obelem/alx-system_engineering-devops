@@ -1,0 +1,4 @@
+The Server
+- The server in the diagram is located in a datacenter (a specially designed structure to hold thousands of machines).
+- It could either be a physical or virtual (i.e an instance of a physical server).
+- The server (physical or virtual) also runs a special operating system that helps it perform its services to the end users.
