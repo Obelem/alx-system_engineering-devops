@@ -7,3 +7,9 @@ Additional Elements
 extra web server is added to the previous infrastructure so that there is redundancy with the added server
 - One Load Balancer (HAProxy): 
 this is added to distribute the traffic between the two servers
+
+Load Balancer Configuration
+Load balancer is configured to have an active-active setup to both offer more computing capacity (due to the availability of multiple servers) and redundancy
+
+Data Synchronization
+The MySQL Master-Replica cluster used replication to keep data synchronized. This master-slave replication system prevents any downtime as the slave (which is a constant live backup of the database) can always be promoted to master if the original master server crashes.
