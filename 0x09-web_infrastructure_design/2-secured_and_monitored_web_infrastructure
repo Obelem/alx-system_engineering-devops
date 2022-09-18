@@ -1,0 +1,25 @@
+# Insert link here
+
+The pictorial reference to this writing is located in the link above..
+
+Additional Elements
+- 3 Firewalls: 
+They filter network traffic in and out of the machine
+- 1 SSL certificate to serve www.foobar.com over HTTPS:
+This encrypts the traffic such that if it is intercepted, it cannot be read
+- 3 Monitoring clients (data collector for Sumologic or other monitoring services):
+This helps keep an eye on various metrics to ensure to smooth operation
+
+Monitoring Setup
+- it is composed of a client collecting data and sending it to the monitoring system
+- Monitoring is configured to
+    i. collect web server data
+    ii. triggers an alert if QPS (Query Per Second) is getting out of control
+
+Problems
+- Terminating SSL at load balancer level leaves traffic between the load balancer and web servers unencrypted and exposed to attack
+- If the only MySQL server (The Master) capable accepting writes goes down, the application can no longer write to the database.
+- Servers with all the same components (database, web server and application server) could
+    i. cause maintenance problems because if maintenace is performed on a server for a specific component, it will affect other components that are on it.
+    ii. be a problem because their consumption will not grow the same way between each of them
+- Load-balancer is a single point of failure
