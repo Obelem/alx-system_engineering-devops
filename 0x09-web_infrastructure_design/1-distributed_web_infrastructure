@@ -12,4 +12,11 @@ Load Balancer Configuration
 Load balancer is configured to have an active-active setup to both offer more computing capacity (due to the availability of multiple servers) and redundancy
 
 Data Synchronization
-The MySQL Master-Replica cluster used replication to keep data synchronized. This master-slave replication system prevents any downtime as the slave (which is a constant live backup of the database) can always be promoted to master if the original master server crashes.
+- The MySQL Master-Replica cluster used replication to keep data synchronized. This master-slave replication system prevents any downtime as the slave (which is a constant live backup of the database) can always be promoted to master if the original master server crashes.
+- As the Master-Slave replication is a one-way replication (from master to slave), only the Master database node can accept reads/write while Replica can only accept reads
+
+Problems With This Infrastructure
+- The load balancer is a single point of failure as its failure would spell the crashing of this infrastructure
+- No firewall on servers
+- Traffic is unencrypted owing to the fact there is no TLS (or SSL) to encrypt the HTTP requests and responses
+- No monitoring
