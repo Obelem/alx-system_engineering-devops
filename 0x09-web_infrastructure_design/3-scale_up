@@ -1,0 +1,10 @@
+# Insert link here
+
+The pictorial reference to this writing is located in the link above..
+
+Additional Elements
+- Servers for specific components (web server, application server, database server)
+- 1 HAproxy load balancer (making a total of two and configured as a cluster)
+
+Load Balancer
+- the load balancer cluster configuration ensures that if one fails, the other takes over
