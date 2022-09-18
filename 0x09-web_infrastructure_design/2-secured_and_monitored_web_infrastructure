@@ -4,9 +4,7 @@ The pictorial reference to this writing is located in the link above..
 
 Additional Elements
 - 3 Firewalls: They filter network traffic in and out of the machine
-
 - 1 SSL certificate to serve www.foobar.com over HTTPS: This encrypts the traffic such that if it is intercepted, it cannot be read
-
 - 3 Monitoring clients (data collector for Sumologic or other monitoring services): This helps keep an eye on various metrics to ensure to smooth operation
 
 Monitoring Setup
