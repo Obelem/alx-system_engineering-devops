@@ -11,10 +11,10 @@
 # file before executing script
 
 # update apt package
-sudo apt-get update -y
+sudo apt-get update
 
 # install nginx with yes to all prompts (-y flag)
-sudo apt-get install -y nginx
+sudo apt-get -y install nginx
 
 # unlink default file path for localhost
 unlink /etc/nginx/sites-enabled/default
