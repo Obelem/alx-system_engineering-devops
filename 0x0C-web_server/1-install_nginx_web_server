@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# MANUAL
+#1.
+# Long in to server as root with 'sudo su'
+# before excuting script to avoid much usage of sudo
+# Command: sudo su
+#2.
+# PLEASE NOTE!!
+# ---- Make backup of /etc/nginx/nginx.conf
+# file before executing script
+
+# update apt package
+sudo apt-get update -y
+
+# install nginx with yes to all prompts (-y flag)
+sudo apt-get install -y nginx
+
+# unlink default file path for localhost
+unlink /etc/nginx/sites-enabled/default
+
+# create root directory for serving static content
+mkdir /var/www/school
+
+# create index.html file that contains desired string
+echo "Hello World!" > /var/www/school/index.html
+
+# create custom configuration file
+echo -e \
+"http {
+    root /var/www/school;
+    index index.html;
+    server {
+        listen 80;
+        location \ {
+        }
+    }
+}
+events {
+}" > /etc/nginx/nginx.conf
+
+service nginx start
