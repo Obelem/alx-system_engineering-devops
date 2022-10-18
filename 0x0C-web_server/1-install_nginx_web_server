@@ -17,7 +17,7 @@ sudo apt-get update -y
 sudo apt-get install -y nginx
 
 # unlink default file path for localhost
-unlink /etc/nginx/sites-enabled/default
+# unlink /etc/nginx/sites-enabled/default
 
 # create root directory for serving static content
 mkdir /var/www/school
