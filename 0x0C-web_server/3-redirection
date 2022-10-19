@@ -1,11 +1,31 @@
 #!/usr/bin/env bash
-# install nginx on your web-01 server
-# Nginx should be listening on port 80
+#install ngix and have a file that returns the string "Hello World inside
 
 sudo apt-get update -y
-sudo apt-get install -y nginx
-ufw allow 'Nginx HTTP'
+sudo apt-get install nginx -y
 echo "Hello World!" | sudo tee /var/www/html/index.html
-errorMsg="\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;\n}"
-sed -i "s/^}$/$errorMsg/" /etc/nginx/sites-available/default
-service nginx restart
+
+new_config=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+               root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+        }
+}
+"
+
+echo "$new_config" > /etc/nginx/sites-available/default
+if [ "$(pgrep nginx)" -le 0 ];
+then
+    service nginx start
+else
+    service nginx restart
+fi;
