@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# install nginx on your web-01 server
+# Nginx should be listening on port 80
+
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/notfound.html
+new_string="\terror_page 404 \/notfound.html;\n\tlocation = \/notfound.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n}"
+sed -i "s/^}$/$new_string/" /etc/nginx/sites-available/default
+service nginx restart
