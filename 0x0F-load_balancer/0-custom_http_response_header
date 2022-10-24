@@ -4,6 +4,14 @@
 apt-get update
 apt-get -y install nginx
 service nginx start
+
 sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+
+redirect=\
+"if (\$request_filename ~ redirect me) {\n\\t\
+rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}"
+sed -i "47i\\$redirect" /etc/nginx/sites-enabled/default
+
 echo "Hello World!" | tee /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 service nginx restart
