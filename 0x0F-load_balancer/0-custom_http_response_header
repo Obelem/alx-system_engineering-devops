@@ -5,5 +5,5 @@
 # sudo apt-get -y install nginx
 sudo service nginx start
 sudo sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
-echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
 sudo service nginx restart
