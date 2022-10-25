@@ -4,7 +4,7 @@
 apt-get -y update
 apt-get -y install nginx
 
-sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 echo "Hello World!" | tee /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
