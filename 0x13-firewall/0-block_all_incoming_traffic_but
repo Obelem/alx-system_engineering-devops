@@ -1,0 +1,16 @@
+# install ufw
+sudo apt update -y
+sudo apt install ufw -y
+
+# deny all incoming and allow outgoing connections respectively
+sudo ufw default deny incoming -y
+sudo ufw default allow outgoing -y
+
+# allow ssh, http and https connections respectively
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+
+# enable and view status respectively
+sudo ufw enable
+sudo ufw status numbered
