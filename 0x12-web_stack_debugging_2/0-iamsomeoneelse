@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo -i -u "$1" bash << EOF
+whoami
+EOF
