@@ -4,10 +4,9 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    # get employee name
+    # get employee response [used to get name in line 19]
     endpoint = 'https://jsonplaceholder.typicode.com'
     user_res = requests.get(endpoint + '/users/' + argv[1]).json()
-    name = user_res['name']
 
     # get total number of tasks
     todos = requests.get(endpoint + '/todos?userId=' + argv[1]).json()
@@ -17,7 +16,6 @@ if __name__ == '__main__':
     titles_done = [todo['title'] for todo in todos if todo['completed']]
 
     print('Employee {} is done with tasks({}/{}):'
-          .format(name, len(titles_done), all_tasks))
+          .format(user_res['name'], len(titles_done), all_tasks))
 
-    for title in titles_done:
-        print('\t {}'.format(title))
+    [print('\t {}'.format(title)) for title in titles_done]
