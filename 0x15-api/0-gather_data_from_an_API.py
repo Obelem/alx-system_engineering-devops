@@ -20,8 +20,7 @@ if __name__ == "__main__":
             titles += [todo['title']]
 
     print('Employee {} is done with ({}/{}):'
-        .format(name, len(titles), all_tasks))
+          .format(name, len(titles), all_tasks))
 
     for title in titles:
         print('\t {}'.format(title))
-
