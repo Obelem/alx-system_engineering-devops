@@ -3,7 +3,7 @@
 import requests
 from sys import argv
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # get employee name
     endpoint = 'https://jsonplaceholder.typicode.com'
     user_res = requests.get(endpoint + '/users/' + argv[1]).json()
@@ -19,7 +19,7 @@ if __name__ == "__main__":
         if todo['completed']:
             titles += [todo['title']]
 
-    print('Employee {} is done with ({}/{}):'
+    print('Employee {} is done with tasks({}/{}):'
           .format(name, len(titles), all_tasks))
 
     for title in titles:
