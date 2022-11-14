@@ -14,13 +14,10 @@ if __name__ == '__main__':
     all_tasks = len(todos)
 
     # get number completed tasks and their titles
-    titles = []
-    for todo in todos:
-        if todo['completed']:
-            titles += [todo['title']]
+    titles_done = [todo['title'] for todo in todos if todo['completed']]
 
     print('Employee {} is done with tasks({}/{}):'
-          .format(name, len(titles), all_tasks))
+          .format(name, len(titles_done), all_tasks))
 
-    for title in titles:
+    for title in titles_done:
         print('\t {}'.format(title))
