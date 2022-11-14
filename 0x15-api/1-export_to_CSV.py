@@ -14,4 +14,4 @@ if __name__ == '__main__':
     with open('{}.csv'.format(argv[1]), 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for todo in todos:
-            writer.writerow([argv[1], usr, todo['title'], todo['completed']])
+            writer.writerow([argv[1], usr, todo['completed'], todo['title']])
